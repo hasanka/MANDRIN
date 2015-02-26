@@ -22,15 +22,19 @@ project(':mandrin-user-app')
 project(':mandrin-service-engine')
 
 task deploy{
+  doFirst{
+     delete fileTree('/Applications/TOMCAT8/webapps').include('mandrin*/**')   
+  }
+
   doLast{
      copy {
-       from 'user-app/build/libs/mandrin-user-app.war'
+       from 'mandrin-user-app/build/libs'
        into '/Applications/TOMCAT8/webapps'
        include '*.war'
      }  
 
      copy {
-       from 'service-engine/build/libs/mandrin-service-engine.war'
+       from 'mandrin-service-engine/build/libs'
        into '/Applications/TOMCAT8/webapps'
        include '*.war'
      }  	
