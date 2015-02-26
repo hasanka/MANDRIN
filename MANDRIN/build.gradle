@@ -1,3 +1,4 @@
+def DEPLOY_DIR = "/Applications/TOMCAT8/webapps"
 
 subprojects {
     apply plugin: 'java'
@@ -23,19 +24,19 @@ project(':mandrin-service-engine')
 
 task deploy{
   doFirst{
-     delete fileTree('/Applications/TOMCAT8/webapps').include('mandrin*/**')   
+     delete fileTree(DEPLOY_DIR).include('mandrin*/**')   
   }
 
   doLast{
      copy {
        from 'mandrin-user-app/build/libs'
-       into '/Applications/TOMCAT8/webapps'
+       into DEPLOY_DIR
        include '*.war'
      }  
 
      copy {
        from 'mandrin-service-engine/build/libs'
-       into '/Applications/TOMCAT8/webapps'
+       into DEPLOY_DIR
        include '*.war'
      }  	
  
