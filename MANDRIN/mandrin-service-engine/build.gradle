@@ -1,0 +1,13 @@
+apply plugin: 'war'
+
+dependencies {
+    compile group: 'commons-io', name: 'commons-io', version: '1.4'
+    compile group: 'log4j', name: 'log4j', version: '1.2.15', ext: 'jar'
+
+    runtime project(':mandrin-api')
+    runtime project(':mandrin-auth')
+    runtime project(':mandrin-core')
+    runtime project(':mandrin-master')
+	
+}
+

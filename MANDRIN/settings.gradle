@@ -1,0 +1,4 @@
+
+include "mandrin-api" , "mandrin-core" , "mandrin-auth" , "mandrin-master","mandrin-user-app","mandrin-service-engine"
+
+

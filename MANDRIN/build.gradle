@@ -1,0 +1,40 @@
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse-wtp'
+
+    repositories {
+       mavenCentral()
+    }
+
+    dependencies {
+        testCompile 'org.testng:testng:5.7'
+	testCompile 'org.mockito:mockito-all:1.9.5'
+    }
+
+}
+
+project(':mandrin-api')
+project(':mandrin-core') 
+project(':mandrin-auth')
+project(':mandrin-master')
+project(':mandrin-user-app')
+project(':mandrin-service-engine')
+
+task deploy{
+  doLast{
+     copy {
+       from 'user-app/build/libs/mandrin-user-app.war'
+       into '/Applications/TOMCAT8/webapps'
+       include '*.war'
+     }  
+
+     copy {
+       from 'service-engine/build/libs/mandrin-service-engine.war'
+       into '/Applications/TOMCAT8/webapps'
+       include '*.war'
+     }  	
+ 
+  }
+
+}

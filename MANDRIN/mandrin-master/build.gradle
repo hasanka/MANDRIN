@@ -1,0 +1,9 @@
+jar {
+   baseName = 'master'
+}
+
+dependencies {
+    compile 'commons-io:commons-io:1.2',
+	    'commons-lang:commons-lang:2.4'
+}
+
