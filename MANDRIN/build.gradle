@@ -9,7 +9,19 @@ subprojects {
     }
 
     dependencies {
-        testCompile 'org.testng:testng:5.7'
+        runtime 'org.springframework:spring-core:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-context:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-context-support:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-expression:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-beans:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-web:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-aspects:4.1.4.RELEASE' 
+	runtime 'org.springframework:spring-webmvc:4.1.4.RELEASE' 
+	runtime 'org.springframework:spring-expression:4.1.4.RELEASE'        	
+	runtime 'com.caucho:hessian:4.0.38'
+
+
+	testCompile 'org.testng:testng:5.7'
 	testCompile 'org.mockito:mockito-all:1.9.5'
     }
 
