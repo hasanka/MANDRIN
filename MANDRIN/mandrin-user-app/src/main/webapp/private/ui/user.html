@@ -12,8 +12,14 @@
 <title>MANDRIN</title>
 
 <!-- Bootstrap Core CSS -->
+<link href="../../bower_components/bootstrap/dist/css/bootstrap.css"
+	rel="stylesheet">
 <link href="../../bower_components/bootstrap/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+
+<!-- Validation css -->
+<link rel="stylesheet"
+	href="../../validation/css/formValidation.min.css" />
 
 <!-- MetisMenu CSS -->
 <link href="../../bower_components/metisMenu/dist/metisMenu.min.css"
@@ -42,6 +48,8 @@
 <link
 	href="../../bower_components/datatables-responsive/css/dataTables.responsive.css"
 	rel="stylesheet">
+
+
 
 <!-- Menu import -->
 <link rel="import" href="menu.html">
@@ -168,16 +176,21 @@
 							<div class="panel panel-info">
 								<div class="panel-heading">Users</div>
 								<div class="panel-body">
-									<form class="row">
+									<form class="row form-horizontal" id="userMgrForm"
+										data-fv-message="This value is not valid"
+										data-fv-icon-valid="glyphicon glyphicon-ok"
+										data-fv-icon-invalid="glyphicon glyphicon-remove"
+										data-fv-icon-validating="glyphicon glyphicon-refresh">
+										
 										<!-- Text input-->
 										<div class="form-group col-lg-4">
 											<label class="col-md-4 control-label text-left"
 												for="firstName">First Name</label>
 											<div class="col-md-8">
 												<input id="firstName" name="firstName" type="text"
-													placeholder="First Name" class="form-control input-md"
-													required="">
-
+													placeholder="First Name" class="form-control"
+													required
+													data-fv-notempty-message="The first name is required and cannot be empty">
 											</div>
 										</div>
 
@@ -187,8 +200,9 @@
 												Name</label>
 											<div class="col-md-8">
 												<input id="kastName" name="kastName" type="text"
-													placeholder="Last Name" class="form-control input-md"
-													required="">
+													placeholder="Last Name" class="form-control"
+													required
+													data-fv-notempty-message="The last name is required and cannot be empty">
 
 											</div>
 										</div>
@@ -199,8 +213,9 @@
 												No.</label>
 											<div class="col-md-8">
 												<input id="phoneNumber" name="phoneNumber" type="text"
-													placeholder="Phone No" class="form-control input-md"
-													required="">
+													placeholder="Phone No" class="form-control"
+													required pattern="^[0-9]+$"
+													data-fv-regexp-message="The phone number can only consist of digits">
 
 											</div>
 										</div>
@@ -210,9 +225,8 @@
 											<label class="col-md-4 control-label" for="email">E-mail</label>
 											<div class="col-md-8">
 												<input id="email" name="email" type="text"
-													placeholder="E-mail" class="form-control input-md"
-													required="">
-
+													placeholder="E-mail" class="form-control"
+													data-fv-emailaddress-message="The input is not a valid email address">
 											</div>
 										</div>
 
@@ -229,12 +243,31 @@
 
 										<!-- Text input-->
 										<div class="form-group col-lg-4">
+											<label class="col-md-4 control-label" for="userName">User
+												Name</label>
+											<div class="col-md-8">
+												<input id="userName" name="userName" type="text"
+													placeholder="User Name" class="form-control"
+													data-fv-message="The username is not valid" required
+													data-fv-notempty-message="The username is required and cannot be empty"
+													pattern="^[a-zA-Z0-9]+$"
+													data-fv-regexp-message="The username can only consist of alphabetical and digits"
+													data-fv-stringlength="true" data-fv-stringlength-min="6"
+													data-fv-stringlength-max="30"
+													data-fv-stringlength-message="The username must be more than 6 and less than 30 characters long">
+											</div>
+										</div>
+
+										<!-- Text input-->
+										<div class="form-group col-lg-4">
 											<label class="col-md-4 control-label" for="password">Password</label>
 											<div class="col-md-8">
-												<input id="password" name="password" type="text"
-													placeholder="Passw0rd" class="form-control input-md"
-													required="">
-
+												<input id="password" name="password" type="password"
+													placeholder="Passw0rd" class="form-control"
+													required
+													data-fv-notempty-message="The password is required and cannot be empty"
+													data-fv-different="true" data-fv-different-field="userName"
+													data-fv-different-message="The password cannot be the same as username">
 											</div>
 										</div>
 
@@ -243,22 +276,12 @@
 											<label class="col-md-4 control-label" for="passwordReType">Re-Enter
 												Password</label>
 											<div class="col-md-8">
-												<input id="passwordReType" name="passwordReType" type="text"
-													placeholder="Re-Enter Password"
-													class="form-control input-md" required="">
-
-											</div>
-										</div>
-
-										<!-- Text input-->
-										<div class="form-group col-lg-4">
-											<label class="col-md-4 control-label" for="userName">User
-												Name</label>
-											<div class="col-md-8">
-												<input id="userName" name="userName" type="text"
-													placeholder="User Name" class="form-control input-md"
-													required="">
-
+												<input id="passwordReType" name="passwordReType"
+													type="password" placeholder="Re-Enter Password"
+													class="form-control" required
+													data-fv-notempty-message="The confirm password is required and cannot be empty"
+													data-fv-identical="true" data-fv-identical-field="password"
+													data-fv-identical-message="The password and its confirm are not the same">
 											</div>
 										</div>
 
@@ -273,13 +296,21 @@
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="col-md-2">
-												<button type="button" class=" btn btn-default form-group"><span class="glyphicon glyphicon-home"></span> Home</button>
-												<button type="button" class=" btn btn-default form-group"><span class="glyphicon glyphicon-plus"></span> Add</button>
+												<button type="button" class=" btn btn-default form-group">
+													<span class="glyphicon glyphicon-home"></span> Home
+												</button>
+												<button type="button" class=" btn btn-default form-group">
+													<span class="glyphicon glyphicon-plus"></span> Add
+												</button>
 											</div>
 											<div class="col-md-8"></div>
 											<div class="col-md-2 text-right">
-												<button type="button" class=" btn btn-danger form-group"><span class="glyphicon glyphicon-trash"></span> Clear</button>
-												<button type="button" class=" btn btn-success form-group"><span class="glyphicon glyphicon-save"></span> Save</button>
+												<button type="button" class=" btn btn-danger form-group">
+													<span class="glyphicon glyphicon-trash"></span> Clear
+												</button>
+												<button type="button" class=" btn btn-success form-group">
+													<span class="glyphicon glyphicon-save"></span> Save
+												</button>
 											</div>
 										</div>
 									</div>
@@ -305,6 +336,12 @@
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
+	<!-- Validation js  -->
+	<script type="text/javascript"
+		src="../../validation/js/formValidation.js"></script>
+	<script type="text/javascript"
+		src="../../validation/js/validation_framework.js"></script>
+
 	<!-- Metis Menu Plugin JavaScript -->
 	<script src="../../bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
@@ -314,16 +351,11 @@
 	<script
 		src="../../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
 
+
+
 	<!-- Custom Theme JavaScript -->
 	<script src="../../mandrin/js/mandrin.js"></script>
-
-	<script>
-		$(document).ready(function() {
-			$("#dataTables-users").DataTable({
-				responsive : true
-			});
-		});
-	</script>
+	<script src="../js/user.js"></script>
 
 </body>
 
