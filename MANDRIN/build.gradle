@@ -9,6 +9,7 @@ subprojects {
     }
 
     dependencies {
+        runtime 'org.springframework:spring-core:4.1.5.RELEASE'
         testCompile 'org.testng:testng:5.7'
 	testCompile 'org.mockito:mockito-all:1.9.5'
     }
