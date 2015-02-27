@@ -5,6 +5,7 @@ $(document).ready(function() {
 function init() {
 	initGrid();
 	initValidations();
+	testPost();
 }
 
 function initGrid() {
@@ -14,6 +15,16 @@ function initGrid() {
 }
 
 function initValidations() {
-	 $('#userMgrForm').formValidation();
+	$('#userMgrForm').formValidation();
 }
 
+function testPost() {
+	var url = "../../controller/test"
+	$.ajax({
+		type : "GET",
+		url : url,
+		success : function() {
+			alert("success");
+		}
+	});
+}

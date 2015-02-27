@@ -2,10 +2,31 @@ apply plugin: 'war'
 
 dependencies {
 	
+	compile 'org.springframework:spring-core:4.1.4.RELEASE'
+	compile 'org.springframework:spring-context:4.1.4.RELEASE'
+	compile 'org.springframework:spring-context-support:4.1.4.RELEASE'
+	compile 'org.springframework:spring-expression:4.1.4.RELEASE'
+	compile 'org.springframework:spring-beans:4.1.4.RELEASE'
+	compile 'org.springframework:spring-web:4.1.4.RELEASE'
+	compile 'org.springframework:spring-aspects:4.1.4.RELEASE'
+	compile 'org.springframework:spring-webmvc:4.1.4.RELEASE'
+	compile 'org.springframework:spring-expression:4.1.4.RELEASE'
+	compile 'com.caucho:hessian:4.0.38'
+
     compile group: 'commons-io', name: 'commons-io', version: '1.4'
     compile group: 'log4j', name: 'log4j', version: '1.2.15', ext: 'jar'
 
     runtime project(':mandrin-api')
+	runtime 'org.springframework:spring-core:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-context:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-context-support:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-expression:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-beans:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-web:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-aspects:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-webmvc:4.1.4.RELEASE'
+	runtime 'org.springframework:spring-expression:4.1.4.RELEASE'
+	runtime 'com.caucho:hessian:4.0.38'
 
 }
 
