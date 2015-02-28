@@ -12,7 +12,8 @@ dependencies {
 	compile 'org.springframework:spring-webmvc:4.1.4.RELEASE'
 	compile 'org.springframework:spring-expression:4.1.4.RELEASE'
 	compile 'com.caucho:hessian:4.0.38'
-
+	compile project(':mandrin-api')
+	
     compile group: 'commons-io', name: 'commons-io', version: '1.4'
     compile group: 'log4j', name: 'log4j', version: '1.2.15', ext: 'jar'
 

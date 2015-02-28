@@ -10,10 +10,9 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+	<context:annotation-config />
 	
-	<bean name="/UserService" class="org.springframework.remoting.caucho.HessianServiceExporter">
-		<property name="service" ref="userService" />
-		<property name="serviceInterface" value="com.mandrin.api.master.user.UserService" />
-	</bean> 
+	<bean name="userService" class="com.mandrin.master.service.UserServiceImpl"/>
+
 
 </beans>

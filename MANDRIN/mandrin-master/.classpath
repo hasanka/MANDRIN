@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="output" path="bin"/>
 	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
+	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="/mandrin-api" exported="true"/>
+	<classpathentry kind="src" path="/mandrin-core" exported="true"/>
 	<classpathentry sourcepath="/Users/HasankaMac/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/1.2/8d9e9793b17242dd19b7e54abea4518a26a09d0e/commons-io-1.2-sources.jar" kind="lib" path="/Users/HasankaMac/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/1.2/ad6ae511ca4608a18317fcb19850fd113bb2ae8/commons-io-1.2.jar" exported="true">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="/Users/HasankaMac/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.4/2b8c4b3035e45520ef42033e823c7d33e4b4402c/commons-lang-2.4-sources.jar" kind="lib" path="/Users/HasankaMac/.gradle/caches/modules-2/files-2.1/commons-lang/commons-lang/2.4/16313e02a793435009f1e458fa4af5d879f6fb11/commons-lang-2.4.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="/Users/HasankaMac/.gradle/caches/modules-2/files-2.1/com.caucho/hessian/4.0.38/beb185af108f8724bf34d2ce5c9bff4dcf9f07cd/hessian-4.0.38-sources.jar" kind="lib" path="/Users/HasankaMac/.gradle/caches/modules-2/files-2.1/com.caucho/hessian/4.0.38/9824f3e96ed3024bf2757cdd56e045cc9d48f7a8/hessian-4.0.38.jar" exported="true">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
 		</attributes>
@@ -49,11 +57,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="/Users/HasankaMac/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.1.4.RELEASE/5d4733e6f5fb51f11d19aca606b796b1e2bd2fb1/spring-webmvc-4.1.4.RELEASE-sources.jar" kind="lib" path="/Users/HasankaMac/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.1.4.RELEASE/77c2be19c80bc4b73c7edcafaff6c3d1babea103/spring-webmvc-4.1.4.RELEASE.jar" exported="true">
-		<attributes>
-			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="/Users/HasankaMac/.gradle/caches/modules-2/files-2.1/com.caucho/hessian/4.0.38/beb185af108f8724bf34d2ce5c9bff4dcf9f07cd/hessian-4.0.38-sources.jar" kind="lib" path="/Users/HasankaMac/.gradle/caches/modules-2/files-2.1/com.caucho/hessian/4.0.38/9824f3e96ed3024bf2757cdd56e045cc9d48f7a8/hessian-4.0.38.jar" exported="true">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
 		</attributes>

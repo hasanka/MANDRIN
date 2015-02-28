@@ -10,10 +10,9 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	
-	<bean name="/UserService" class="org.springframework.remoting.caucho.HessianServiceExporter">
-		<property name="service" ref="userService" />
+	<bean id="userService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="http://localhost:8080/mandrin-service-engine/UserService" />
 		<property name="serviceInterface" value="com.mandrin.api.master.user.UserService" />
-	</bean> 
+	</bean>
 
 </beans>

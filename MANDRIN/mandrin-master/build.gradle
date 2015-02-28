@@ -1,9 +1,13 @@
-jar {
-   baseName = 'master'
-}
+jar { baseName = 'mandrin-master' }
 
 dependencies {
-    compile 'commons-io:commons-io:1.2',
-	    'commons-lang:commons-lang:2.4'
+	compile project(':mandrin-api')
+	compile project(':mandrin-core')
+	
+	compile 'commons-io:commons-io:1.2',
+			'commons-lang:commons-lang:2.4',
+			'com.caucho:hessian:4.0.38'
+			
+	
 }
 

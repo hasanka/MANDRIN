@@ -1,5 +1,5 @@
 jar {
-   baseName = 'auth'
+   baseName = 'mandrin-auth'
 }
 
 dependencies {
