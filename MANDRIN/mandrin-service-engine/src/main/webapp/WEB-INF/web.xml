@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   
     http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-	<servlet>
+	 <servlet>
 		<servlet-name>hessian</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
@@ -12,8 +12,8 @@
 
 	<servlet-mapping>
 		<servlet-name>hessian</servlet-name>
-		<url-pattern>/*</url-pattern>
-	</servlet-mapping>
+		<url-pattern>*.http</url-pattern>
+	</servlet-mapping>  
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -25,9 +25,5 @@
           org.springframework.web.context.ContextLoaderListener
        </listener-class>
   	</listener> 
-
-	<welcome-file-list>
-		<welcome-file>/index.html</welcome-file>
-	</welcome-file-list> 
 
 </web-app> 
