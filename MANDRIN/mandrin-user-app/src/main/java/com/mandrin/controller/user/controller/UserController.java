@@ -3,11 +3,12 @@ package com.mandrin.controller.user.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 
  * @author HasankaMac
- *
+ * 
  */
 
 @Controller
@@ -15,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
 
 	
-	@RequestMapping(value="/test",method =RequestMethod.GET)
-	public String test(){
-		System.out.println("sample app test \n");
-		return "OK";
+	@ResponseBody
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String test() {
+		return "success";
 	}
-	
+
 }

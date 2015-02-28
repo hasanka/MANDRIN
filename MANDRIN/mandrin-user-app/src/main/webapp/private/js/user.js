@@ -19,12 +19,15 @@ function initValidations() {
 }
 
 function testPost() {
-	var url = "../../controller/test"
-	$.ajax({
-		type : "GET",
-		url : url,
-		success : function() {
-			alert("success");
-		}
-	});
+	var url = "../../controller/test";	
+	$.ajax( url )
+	  .done(function() {
+	    alert( "success" );
+	  })
+	  .fail(function() {
+	    alert( "error" );
+	  })
+	  .always(function() {
+	    alert( "complete" );
+	  });
 }
