@@ -4,6 +4,8 @@ jar {
 
 dependencies {
     compile 'commons-io:commons-io:1.2',
-	    'commons-lang:commons-lang:2.4'
+	    'commons-lang:commons-lang:2.4',
+		'org.springframework.data:spring-data-mongodb:1.6.2.RELEASE',
+		'org.mongodb:mongo-java-driver:2.13.0'
 }
 

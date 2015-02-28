@@ -1,17 +1,21 @@
 package com.mandrin.master.domain;
 
-import com.mandrin.core.domain.AbstractTrackableEntity;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.mandrin.core.domain.BaseEntity;
 
 /**
  * 
  * @author HasankaMac
  *
  */
-
-public class User extends AbstractTrackableEntity{
+@Document(collection="User")
+public class User extends BaseEntity{
 
 	private static final long serialVersionUID = 1L;
 
+	@Id
 	private String userId;
 	
 	private String firstName;
