@@ -3,6 +3,7 @@ package com.mandrin.master.dao;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.mandrin.api.master.dto.UserDTO;
+import com.mandrin.api.exception.MandrinException;
 
 /**
  * 
@@ -12,6 +13,6 @@ import com.mandrin.api.master.dto.UserDTO;
 @Transactional
 public interface UserDao {
 
-	public void saveUser(UserDTO dto);
+	public void saveUser(UserDTO dto) throws MandrinException;
 	
 }

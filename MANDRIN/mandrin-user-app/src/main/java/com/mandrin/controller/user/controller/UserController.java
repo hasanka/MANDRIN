@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.mandrin.api.exception.MandrinException;
 import com.mandrin.api.master.dto.UserDTO;
 import com.mandrin.api.master.user.UserService;
 
@@ -21,12 +22,11 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@ResponseBody
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
-	public String test() {
+	public void test() throws MandrinException {
 		userService.saveUser(new UserDTO());
-		return "success";
 	}
 
 }

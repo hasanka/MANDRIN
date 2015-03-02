@@ -21,11 +21,11 @@ function initValidations() {
 function testPost() {
 	var url = "../../controller/test";	
 	$.ajax( url )
-	  .done(function() {
+	  .done(function(response) {
 	    alert( "success" );
 	  })
-	  .fail(function() {
-	    alert( "error" );
+	  .fail(function(error) {
+	    alert( error.responseText );
 	  })
 	  .always(function() {
 	    alert( "complete" );
