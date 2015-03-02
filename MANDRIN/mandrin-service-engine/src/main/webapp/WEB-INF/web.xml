@@ -12,7 +12,7 @@
 
 	<servlet-mapping>
 		<servlet-name>hessian</servlet-name>
-		<url-pattern>*.http</url-pattern>
+		<url-pattern>/remoting/*</url-pattern>
 	</servlet-mapping>  
 
 	<context-param>

@@ -28,6 +28,6 @@ function testPost() {
 	    alert( error.responseText );
 	  })
 	  .always(function() {
-	    alert( "complete" );
+//	    alert( "complete" );
 	  });
 }
