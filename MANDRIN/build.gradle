@@ -20,6 +20,7 @@ subprojects {
 	runtime 'org.springframework:spring-webmvc:4.1.4.RELEASE' 
 	runtime 'org.springframework:spring-expression:4.1.4.RELEASE'        	
 	runtime 'com.caucho:hessian:4.0.38'
+	runtime 'org.slf4j:slf4j-api:1.7.10'
 
         testCompile 'org.testng:testng:5.7'
 	testCompile 'org.mockito:mockito-all:1.9.5'
