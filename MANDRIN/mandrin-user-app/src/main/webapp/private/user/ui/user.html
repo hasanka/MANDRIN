@@ -1,0 +1,259 @@
+
+<!-- Page Content -->
+<div id="page-wrapper">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Administrator</h1>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-info">
+						<div class="panel-heading">Users</div>
+						<div class="panel-body">
+							<div class="dataTable_wrapper">
+								<table class="table table-striped table-bordered table-hover"
+									id="dataTables-users">
+									<thead>
+										<tr>
+											<th>Rendering engine</th>
+											<th>Browser</th>
+											<th>Platform(s)</th>
+											<th>Engine version</th>
+											<th>CSS grade</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="gradeA">
+											<td>Webkit</td>
+											<td>S60</td>
+											<td>S60</td>
+											<td class="center">413</td>
+											<td class="center">A</td>
+										</tr>
+										<tr class="gradeA">
+											<td>Presto</td>
+											<td>Opera 7.0</td>
+											<td>Win 95+ / OSX.1+</td>
+											<td class="center">-</td>
+											<td class="center">A</td>
+										</tr>
+										<tr class="gradeA">
+											<td>Presto</td>
+											<td>Opera 7.5</td>
+											<td>Win 95+ / OSX.2+</td>
+											<td class="center">-</td>
+											<td class="center">A</td>
+										</tr>
+
+										<tr class="gradeA">
+											<td>Presto</td>
+											<td>Opera 9.5</td>
+											<td>Win 88+ / OSX.3+</td>
+											<td class="center">-</td>
+											<td class="center">A</td>
+										</tr>
+										<tr class="gradeA">
+											<td>Presto</td>
+											<td>Opera for Wii</td>
+											<td>Wii</td>
+											<td class="center">-</td>
+											<td class="center">A</td>
+										</tr>
+										<tr class="gradeA">
+											<td>Presto</td>
+											<td>Nokia N800</td>
+											<td>N800</td>
+											<td class="center">-</td>
+											<td class="center">A</td>
+										</tr>
+										<tr class="gradeA">
+											<td>Presto</td>
+											<td>Nintendo DS browser</td>
+											<td>Nintendo DS</td>
+											<td class="center">8.5</td>
+											<td class="center">C/A<sup>1</sup>
+											</td>
+										</tr>
+										<tr class="gradeC">
+											<td>KHTML</td>
+											<td>Konqureror 3.1</td>
+											<td>KDE 3.1</td>
+											<td class="center">3.1</td>
+											<td class="center">C</td>
+										</tr>
+										<tr class="gradeA">
+											<td>KHTML</td>
+											<td>Konqureror 3.3</td>
+											<td>KDE 3.3</td>
+											<td class="center">3.3</td>
+											<td class="center">A</td>
+										</tr>
+										<tr class="gradeA">
+											<td>KHTML</td>
+											<td>Konqureror 3.5</td>
+											<td>KDE 3.5</td>
+											<td class="center">3.5</td>
+											<td class="center">A</td>
+										</tr>
+
+									</tbody>
+								</table>
+							</div>
+							<!-- /.table-responsive -->
+
+						</div>
+						<!-- <div class="panel-footer">Panel Footer</div> -->
+					</div>
+					<!-- /.col-lg-4 -->
+				</div>
+				<div class="col-lg-12">
+					<div class="panel panel-info">
+						<div class="panel-heading">Users</div>
+						<div class="panel-body">
+							<form class="row form-horizontal" id="userMgrForm"
+								data-fv-message="This value is not valid"
+								data-fv-icon-valid="glyphicon glyphicon-ok"
+								data-fv-icon-invalid="glyphicon glyphicon-remove"
+								data-fv-icon-validating="glyphicon glyphicon-refresh">
+
+								<!-- Text input-->
+								<div class="form-group col-lg-4">
+									<label class="col-md-4 control-label text-left" for="firstName">First
+										Name</label>
+									<div class="col-md-8">
+										<input id="firstName" name="firstName" type="text"
+											placeholder="First Name" class="form-control" required
+											data-fv-notempty-message="The first name is required and cannot be empty">
+									</div>
+								</div>
+
+								<!-- Text input-->
+								<div class="form-group col-lg-4">
+									<label class="col-md-4 control-label" for="kastName">Last
+										Name</label>
+									<div class="col-md-8">
+										<input id="kastName" name="kastName" type="text"
+											placeholder="Last Name" class="form-control" required
+											data-fv-notempty-message="The last name is required and cannot be empty">
+
+									</div>
+								</div>
+
+								<!-- Text input-->
+								<div class="form-group col-lg-4">
+									<label class="col-md-4 control-label" for="phoneNumber">Phone
+										No.</label>
+									<div class="col-md-8">
+										<input id="phoneNumber" name="phoneNumber" type="text"
+											placeholder="Phone No" class="form-control" required
+											pattern="^[0-9]+$"
+											data-fv-regexp-message="The phone number can only consist of digits">
+
+									</div>
+								</div>
+
+								<!-- Text input-->
+								<div class="form-group col-lg-4">
+									<label class="col-md-4 control-label" for="email">E-mail</label>
+									<div class="col-md-8">
+										<input id="email" name="email" type="text"
+											placeholder="E-mail" class="form-control"
+											data-fv-emailaddress-message="The input is not a valid email address">
+									</div>
+								</div>
+
+								<!-- Select Basic -->
+								<div class="form-group col-lg-4">
+									<label class="col-md-4 control-label" for="isActive">State</label>
+									<div class="col-md-8">
+										<select id="isActive" name="isActive" class="form-control">
+											<option value="ACT">Active</option>
+											<option value="INC">In Active</option>
+										</select>
+									</div>
+								</div>
+
+								<!-- Text input-->
+								<div class="form-group col-lg-4">
+									<label class="col-md-4 control-label" for="userName">User
+										Name</label>
+									<div class="col-md-8">
+										<input id="userName" name="userName" type="text"
+											placeholder="User Name" class="form-control"
+											data-fv-message="The username is not valid" required
+											data-fv-notempty-message="The username is required and cannot be empty"
+											pattern="^[a-zA-Z0-9]+$"
+											data-fv-regexp-message="The username can only consist of alphabetical and digits"
+											data-fv-stringlength="true" data-fv-stringlength-min="6"
+											data-fv-stringlength-max="30"
+											data-fv-stringlength-message="The username must be more than 6 and less than 30 characters long">
+									</div>
+								</div>
+
+								<!-- Text input-->
+								<div class="form-group col-lg-4">
+									<label class="col-md-4 control-label" for="password">Password</label>
+									<div class="col-md-8">
+										<input id="password" name="password" type="password"
+											placeholder="Passw0rd" class="form-control" required
+											data-fv-notempty-message="The password is required and cannot be empty"
+											data-fv-different="true" data-fv-different-field="userName"
+											data-fv-different-message="The password cannot be the same as username">
+									</div>
+								</div>
+
+								<!-- Text input-->
+								<div class="form-group col-lg-4">
+									<label class="col-md-4 control-label" for="passwordReType">Re-Enter
+										Password</label>
+									<div class="col-md-8">
+										<input id="passwordReType" name="passwordReType"
+											type="password" placeholder="Re-Enter Password"
+											class="form-control" required
+											data-fv-notempty-message="The confirm password is required and cannot be empty"
+											data-fv-identical="true" data-fv-identical-field="password"
+											data-fv-identical-message="The password and its confirm are not the same">
+									</div>
+								</div>
+
+								<!-- Textarea -->
+								<div class="form-group col-lg-4">
+									<label class="col-md-4 control-label" for="textarea">Comment</label>
+									<div class="col-md-8">
+										<textarea class="form-control" id="textarea" name="textarea"></textarea>
+									</div>
+								</div>
+							</form>
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="col-md-2">
+										<button type="button" class=" btn btn-default form-group">
+											<span class="glyphicon glyphicon-home"></span> Home
+										</button>
+										<button type="button" class=" btn btn-default form-group">
+											<span class="glyphicon glyphicon-plus"></span> Add
+										</button>
+									</div>
+									<div class="col-md-8"></div>
+									<div class="col-md-2 text-right">
+										<button type="button" class=" btn btn-danger form-group">
+											<span class="glyphicon glyphicon-trash"></span> Clear
+										</button>
+										<button type="button" class=" btn btn-success form-group">
+											<span class="glyphicon glyphicon-save"></span> Save
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /.col-lg-12 -->
+		</div>
+		<!-- /.row -->
+	</div>
+	<!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->

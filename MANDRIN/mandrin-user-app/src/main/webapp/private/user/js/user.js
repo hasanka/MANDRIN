@@ -19,7 +19,7 @@ function initValidations() {
 }
 
 function testPost() {
-	var url = "../../controller/test";	
+	var url = "controller/test";	
 	$.ajax( url )
 	  .done(function(response) {
 	    alert( "success" );
