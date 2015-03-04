@@ -37,7 +37,11 @@ project(':mandrin-service-engine')
 
 task deploy{
   doFirst{
-     delete fileTree(DEPLOY_DIR).include('mandrin*/**')   
+	println "Cleaning tomcat webapps directory"
+	delete fileTree("${DEPLOY_DIR}").include('mandrin*/**')   
+	ant.delete(dir: "${DEPLOY_DIR}/" + 'mandrin' + '-service-engine/')
+	ant.delete(dir: "${DEPLOY_DIR}/" + 'mandrin'  + '-user-app/')
+	  
   }
 
   doLast{
