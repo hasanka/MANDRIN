@@ -1,3 +1,5 @@
+var userGridData = [];
+
 $(document).ready(function() {
 	init();
 });
@@ -5,13 +7,39 @@ $(document).ready(function() {
 function init() {
 	initGrid();
 	initValidations();
-	testPost();
+//	testPost();
 }
 
 function initGrid() {
-	$("#dataTables-users").DataTable({
-		responsive : true
+	var table = $("#dataTables-users").DataTable({
+		responsive : true,
+		processing: true,
+        serverSide: false,
+        ajax: 'controller/searchGridData',
+        columns: [
+            { "data": "firstName" },
+            { "data": "lastName" },
+            { "data": "phoneNumber" },
+            { "data": "email" },
+            { "data": "status" },
+            { "data": "userName" },
+            {
+              "data": null,
+              "defaultContent": '<span class="glyphicon glyphicon-pencil aria-hidden="false"></span>',
+              "orderable": false,
+              "searchable": false,
+            }
+        ],
+        createdRow: function ( row, data, index ) {
+        	userGridData.push(data);
+        },
+        
 	});
+	
+	$('#dataTables-users tbody').on( 'click', 'tr', function () {
+		 $(this).toggleClass('selected');
+    } );
+	
 }
 
 function initValidations() {

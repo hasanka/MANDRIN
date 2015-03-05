@@ -1,6 +1,7 @@
 var currentPage = null;
 
 $(document).ready(function() {
+	cacheScripts();
 	menuItemClick();
 });
 
@@ -17,10 +18,29 @@ function menuItemClick() {
 		}
 
 		if (jsName != null && jsName != "" && isPageLoaded) {
-			$.getScript(jsName, function(data, textStatus, jqxhr) {
-				console.log(jsName+" load was performed.");
-			});
+			getScript(jsName);
 		}
 
 	});
+}
+
+
+function getScript(path) {
+	jQuery.ajax({
+        crossDomain: true,
+        dataType: "script",
+        url: path,
+        success: function(){
+           // _success(_slot);
+        },
+        error: function(){
+           // _fail(_slot);
+        }
+    });
+}
+
+function cacheScripts() {
+	$.ajaxSetup({
+		  cache: true
+		});
 }
