@@ -18,7 +18,7 @@ public class AbstractTrackableEntity implements Serializable{
 	@Version
 	private Integer version;
 
-	public long getVersion() {
+	public Integer getVersion() {
 		return version;
 	}
 

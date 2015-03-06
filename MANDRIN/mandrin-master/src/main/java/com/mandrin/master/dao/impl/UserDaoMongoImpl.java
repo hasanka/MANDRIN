@@ -1,5 +1,7 @@
 package com.mandrin.master.dao.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.mandrin.api.master.dto.UserDTO;
@@ -12,13 +14,13 @@ import com.mandrin.master.domain.User;
 /**
  * 
  * @author HasankaMac
- *
+ * 
  */
-public class UserDaoMongoImpl extends BaseMongoDao implements UserDao{
+public class UserDaoMongoImpl extends BaseMongoDao implements UserDao {
 
 	@Autowired
-	private UserAdapter userAdapter; 
-	
+	private UserAdapter userAdapter;
+
 	@Override
 	public void saveUser(UserDTO dto) throws MandrinException {
 		try {
@@ -27,8 +29,13 @@ public class UserDaoMongoImpl extends BaseMongoDao implements UserDao{
 		} catch (Exception ex) {
 			mandrinExceptionHandler(ex);
 		}
-		
+
 	}
-	
-	
+
+	@Override
+	public List<UserDTO> searchAllUsers() throws MandrinException {
+		List<User> users = getMongoOperation().findAll(User.class);
+		return userAdapter.toUserDtoList(users);
+	}
+
 }

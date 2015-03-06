@@ -11,7 +11,7 @@ public class UserFeto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private long userId;
+	private String userId;
 	private String firstName;
 	private String lastName;
 	private String phoneNumber;
@@ -19,14 +19,9 @@ public class UserFeto implements Serializable {
 	private String status;
 	private String userName;
 	private String comment;
-	private String passwordCharCount;
+	private String password;
+	private String version;
 	
-	public long getUserId() {
-		return userId;
-	}
-	public void setUserId(long userId) {
-		this.userId = userId;
-	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -69,14 +64,28 @@ public class UserFeto implements Serializable {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public String getPasswordCharCount() {
-		return passwordCharCount;
-	}
-	public void setPasswordCharCount(String passwordCharCount) {
-		this.passwordCharCount = passwordCharCount;
-	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getVersion() {
+		return version;
+	}
+	public void setVersion(String version) {
+		this.version = version;
+	}
+	
+	
 	
 }

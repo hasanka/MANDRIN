@@ -29,6 +29,8 @@ public class UserDTO implements Serializable   {
 	
 	private String comment;
 
+	private Integer version;
+	
 	@Override
 	public String toString() {
 		return "UserDTO [userId=" + userId + ", firstName=" + firstName
@@ -113,5 +115,14 @@ public class UserDTO implements Serializable   {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
+
 	
 }
