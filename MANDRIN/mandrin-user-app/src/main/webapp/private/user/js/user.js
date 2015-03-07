@@ -1,12 +1,15 @@
+var isEdit = false;
+var empty = "";
+
 $(document).ready(function() {
 	init();
 });
 
 function init() {
 	initGrid();
-	// initValidations();
+	initValidations();
 	initButtonClicks();
-	// testPost();
+	disableUiElement(true);
 }
 
 function initGrid() {
@@ -63,20 +66,29 @@ function initGrid() {
 	$('#userDataTable tbody').on('click', 'span', function() {
 		var table = $('#userDataTable').DataTable();
 		var rowValues = table.row(this.parentNode.parentNode).data();
+		clearButtonClick();
 		setRowValuesToFields(rowValues);
 	});
 
 }
 
 function initValidations() {
-	$('#userMgrForm').formValidation();
+	$('#userMgrForm').formValidation()
+	.on('err.field.fv', function(e, data) {
+		$('#save').attr('disabled', true);
+    })
+    .on('success.field.fv', function(e, data) {
+    	if (data.fv.getInvalidFields().length > 0) {
+    		$('#save').attr('disabled', false);
+        }
+    });
 }
 
 function initButtonClicks() {
 	// $("#home").click();
-	// $("#add").click();
-	// $("#edit").click();
-	// $("#clear").click();
+	 $("#add").click(addButtonClick);
+	 $("#edit").click(editButtonClick);
+	 $("#clear").click(clearButtonClick);
 	$("#save").click(saveClick);
 }
 
@@ -92,20 +104,23 @@ function setRowValuesToFields(rowData) {
 	$("#isActive").val(rowData.status);
 	$("#hdnUserId").val(rowData.userId);
 	$("#hdnVersion").val(rowData.version);
+	$('#edit').attr('disabled', false);
 }
 
 function saveClick() {
-	var url = "controller/saveUser";
-	var postData = getPostData();
-	$.ajax({
-		url : url,
-		data : postData
-	}).done(function(response) {
-		gridReload();
-		alert("success");
-	}).fail(function(error) {
-		alert(error.responseText);
-	});
+	if(checkValidDataAdded()){
+		var url = "controller/saveUser";
+		var postData = getPostData();
+		$.ajax({
+			url : url,
+			data : postData
+		}).done(function(response) {
+			clearButtonClick();
+			alert("success");
+		}).fail(function(error) {
+			alert(error.responseText);
+		});
+	}
 }
 
 function getPostData() {
@@ -125,7 +140,68 @@ function getPostData() {
 }
 
 function gridReload() {
-	// v { ajax: "data.json"}
 	var table = $('#userDataTable').DataTable();
 	table.ajax.reload();
+}
+
+function disableUiElement(status) {
+	$('#firstName').attr('disabled', status);
+	$('#lastName').attr('disabled', status);
+	$('#phoneNumber').attr('disabled', status);
+	$('#email').attr('disabled', status);
+	$('#comment').attr('disabled', status);
+	$('#isActive').attr('disabled', status);
+	$('#userName').attr('disabled', status);
+	$('#password').attr('disabled', status);
+	$('#comment').attr('disabled', status);
+	$('#passwordReType').attr('disabled', status);
+	
+	$('#save').attr('disabled', status);
+	$('#edit').attr('disabled', status);
+}
+
+function addButtonClick() {
+	isEdit = false;
+	clearFields();
+	disableUiElement(false);
+	$('#edit').attr('disabled', true);
+	$('#save').attr('disabled', true);
+}
+
+function editButtonClick() {
+	isEdit = true;
+	disableUiElement(false);
+	$("#userMgrForm").data('formValidation').validate();
+	$('#add').attr('disabled', true);
+}
+
+function clearButtonClick() {
+	isEdit = false;
+	clearFields();
+	disableUiElement(true);
+	gridReload();
+	$('#add').attr('disabled', false);
+}
+
+function clearFields() {
+	$("#userMgrForm").data('formValidation').resetForm(true);
+	$('#firstName').val(empty);
+	$('#lastName').val(empty);
+	$('#phoneNumber').val(empty);
+	$('#email').val(empty);
+	$('#comment').val(empty);
+	$('#isActive').val("ACT");
+	$('#userName').val(empty);
+	$('#password').val(empty);
+	$('#comment').val(empty);
+	$('#passwordReType').val(empty);
+}
+
+function checkValidDataAdded() {
+	var formValidation = $("#userMgrForm").data('formValidation');
+	console.log(formValidation.getInvalidFields());
+	if (formValidation.isValid()) {
+		return true;
+	}
+	return false;
 }

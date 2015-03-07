@@ -83,7 +83,9 @@
 									<label class="col-md-4 control-label" for="email">E-mail</label>
 									<div class="col-md-8">
 										<input id="email" name="email" type="text"
-											placeholder="E-mail" class="form-control"
+											placeholder="E-mail" class="form-control" required
+											data-fv-emailaddress="true"
+											data-fv-notempty-message="The email is required and cannot be empty"
 											data-fv-emailaddress-message="The input is not a valid email address">
 									</div>
 								</div>
@@ -92,7 +94,7 @@
 								<div class="form-group col-lg-4">
 									<label class="col-md-4 control-label" for="isActive">State</label>
 									<div class="col-md-8">
-										<select id="isActive" name="isActive" class="form-control">
+										<select id="isActive" name="isActive" class="form-control" required>
 											<option value="ACT">Active</option>
 											<option value="INC">In Active</option>
 										</select>
