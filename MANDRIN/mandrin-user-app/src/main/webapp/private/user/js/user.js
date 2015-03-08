@@ -116,7 +116,7 @@ function saveClick() {
 			data : postData
 		}).done(function(response) {
 			clearButtonClick();
-			alert("success");
+			maindrinPopUp("success","User Account Info","User information saved succesfuly.");
 		}).fail(function(error) {
 			alert(error.responseText);
 		});
